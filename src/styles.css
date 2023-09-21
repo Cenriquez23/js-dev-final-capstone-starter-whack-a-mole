@@ -1,6 +1,6 @@
 html {
   /*background: url('./assets/background.png') no-repeat center center fixed;*/
-  background: url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/background.png?raw=true') no-repeat center center fixed;
+  background: url('https://github.com/Cenriquez23/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/galaxy.png?raw=true') no-repeat center center fixed;
   box-sizing: border-box;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -10,41 +10,54 @@ html {
   overflow: hidden;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 h1 {
   text-align: center;
-  font-size: 90px;
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
-  color: white;
+  font-size: 120px;
+  font-family: "Lucida Bright", "Comic Sans", cursive;
+  color: #147df5;
   -webkit-text-stroke: 2px black;
+  margin-bottom: 10px;
 }
 
 h2 {
   text-align: center;
-  font-size: 40px;
-  color: white;
+  margin-top: 1px;
+  margin-bottom: 5px;
+  font-family: "Lucida Bright", "Comic Sans", cursive;
+  font-size: 30px;
+  color: #147df5;
   -webkit-text-stroke: 1px black;
 }
 
 #start {
-    text-align: center;
-    font-size: 30px;
+  background-color: #5390d9;
+  text-align: center;
+  font-size: 30px;
+  color: black;
+  font-family: "Lucida Bright", "Comic Sans";
 }
 
 #timer{
-    color: white;
+  color: #147df5;
+  -webkit-text-stroke: 2px black;
 }
 
 .grid {
-  width: 600px;
+  width: 1000px;
   height: 400px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   margin: 0 auto;
-  /*cursor: url('./assets/mallet.png'), pointer;*/
+  cursor: url("../assets/mallett.png"), pointer;
 }
 
 .hole {
-  flex: 1 0 33.33%;
+  flex: 1 0 24%;
   overflow: hidden;
   position: relative;
 }
@@ -52,7 +65,7 @@ h2 {
 .hole:after {
   display: block;
   /*background: url("./assets/hole.png") bottom center no-repeat;*/
-  background: url("https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/hole.png?raw=true") bottom center no-repeat;
+  background: url("https://github.com/Cenriquez23/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/gray-mist.png?raw=true") bottom center no-repeat;
   background-size:contain;
   content:'';
   width: 100%;
@@ -60,12 +73,12 @@ h2 {
   position: absolute;
   bottom: -40%;
   z-index: 2;
-  pointer-events:none;
+  pointer-events: none;
 }
 
-.mole {
+.star {
   /*background:url('./assets/mole.png') bottom center no-repeat;*/
-  background:url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/mole.png?raw=true') bottom center no-repeat;
+  background:url('https://github.com/Cenriquez23/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/silver-star.png?raw=true') bottom center no-repeat;
   background-size: 40%;
   position: absolute;
   top: 100%;
@@ -76,7 +89,52 @@ h2 {
   pointer-events:auto;
 }
 
-.hole.show .mole {
+.sprite {
+  /*background:url('./assets/mole.png') bottom center no-repeat;*/
+  background:url('https://github.com/Cenriquez23/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/blue-star.png?raw=true')
+  bottom center no-repeat;
+  background-size: 40%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+  pointer-events: auto;
+}
+
+.hole.show .star {
   top: 0;
-  /*transform: scale(1.1);*/
+  }
+
+.hole.show-sprite .sprite {
+  top: 0;
+}
+
+#starterBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#selectedDifficulty {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  align-items: center;
+  width: 500px;
+  height: 1em;
+  font-size: 30px;
+  color: #5390d9;
+}
+
+#easyLevel,
+#normalLevel,
+#hardLevel {
+  background-color: #5390d9;
+  color: #000000;
+  font-size: 20px;
+  font-family: "Lucida Bright", "Comic Sans";
 }
