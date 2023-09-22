@@ -213,14 +213,14 @@ function starOrSpriteRandomizer(){
 
 //Updates the score
 function updateScore(target) {
- if(target === "sprite"){
+  if(target === "sprite"){
    points +=5;
  } else{
    points += 1;
  }
    score.textContent = points;
  return points;
-} 
+}
 
 /**
 *
@@ -282,10 +282,10 @@ function startTimer() {
 function whack(event) {
   // TODO: Write your code here.
   // call updateScore()
-  console.log("WHACK!");
-  updateScore();
-  return points;
-}
+    console.log("whacked");
+    updateScore();
+     return points;
+  }
 
 //Whacks a sprite
 function whackSprite(event) {
