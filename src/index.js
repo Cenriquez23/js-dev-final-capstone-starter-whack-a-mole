@@ -54,7 +54,7 @@ function setDelay(difficulty) {
     } else if (difficulty === "normal") {
     return 1000;
     } else if (difficulty === "hard") {
-      return randomInteger(600, 1000); 
+      return randomInteger(600, 1200); 
     }
   }
 
@@ -118,8 +118,9 @@ function gameOver() {
     return timeoutID;
   } else {
     let gameStopped = stopGame();
-    return gameStopped;
   }
+  removePreviousStar();
+  return gameStopped;
 }
 
 /**
@@ -190,13 +191,13 @@ function removePreviousStar() {
 // Picks a star or sprite at random
 function starOrSpriteRandomizer(){
   let randomizer = randomInteger(0, 100);
-  let outCome = " ";
+  let outcome = " ";
   if (randomizer >= 65) {
-    outCome ="sprite";
+    outcome ="sprite";
   } else {
-   outCome = "star";
+   outcome = "star";
   }
-  return outCome;
+  return outcome;
 }
 
 
