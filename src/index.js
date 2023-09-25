@@ -214,10 +214,10 @@ function starOrSpriteRandomizer(){
 
 //Updates the score
 function updateScore() {
-  points +1;
-	score.textContent = points;
-	return points;
-}
+  points += 1; 
+  score.textContent = points;
+  return points;
+  }
 
 /**
 *
