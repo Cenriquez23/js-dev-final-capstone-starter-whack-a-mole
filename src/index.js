@@ -213,7 +213,7 @@ function starOrSpriteRandomizer(){
 */
 
 //Updates the score
-function updateScore(points) {
+function updateScore() {
   points += 1; 
   score.textContent = points;
   return points;
@@ -279,14 +279,14 @@ function startTimer() {
 function whack(event) {
   // TODO: Write your code here.
   // call updateScore()
-    updateScore();
+    updateScore(star);
     console.log("whacked");
      return points;
   }
 
 //Whacks a sprite
 function whackSprite(event) {
-  updateScore();
+  updateScore(sprite);
   console.log("sprite whacked");
   return points;
 }
