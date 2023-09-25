@@ -13,7 +13,7 @@ const sprites = document.querySelectorAll(".sprite");
 let time = 0;
 let timer;
 let lastHole = 0;
-let points;
+let points = 0;
 let difficulty = "normal";
 
 /**
@@ -279,8 +279,8 @@ function startTimer() {
 function whack(event) {
   // TODO: Write your code here.
   // call updateScore()
+    updateScore("star");
     console.log("whacked");
-    updateScore();
      return points;
   }
 
