@@ -1,5 +1,5 @@
 const holes = document.querySelectorAll('.hole');
-const star = document.querySelectorAll('.star');
+const stars = document.querySelectorAll(".star");
 const startButton = document.querySelector('#start');
 // TODO: Add the missing query selectors:
 const score = document.querySelector('#score'); // Use querySelector() to get the score element
@@ -279,14 +279,14 @@ function startTimer() {
 function whack(event) {
   // TODO: Write your code here.
   // call updateScore()
-    updateScore(star);
+    updateScore("star");
     console.log("whacked");
      return points;
   }
 
 //Whacks a sprite
 function whackSprite(event) {
-  updateScore(sprite);
+  updateScore("sprite");
   console.log("sprite whacked");
   return points;
 }
