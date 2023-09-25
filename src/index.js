@@ -13,7 +13,7 @@ const sprites = document.querySelectorAll(".sprite");
 let time = 0;
 let timer;
 let lastHole = 0;
-let points = 0;
+let points;
 let difficulty = "normal";
 
 /**
@@ -213,14 +213,10 @@ function starOrSpriteRandomizer(){
 */
 
 //Updates the score
-function updateScore(target) {
-  if(target === "sprite"){
-   points +=5;
- } else{
-   points += 1;
- }
-   score.textContent = points;
- return points;
+function updateScore() {
+  points ++;
+	score.textContent = points;
+	return points;
 }
 
 /**
